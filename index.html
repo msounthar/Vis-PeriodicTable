@@ -1,0 +1,91 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+
+<style>
+</style>
+
+<body>
+  <h1> Cause of Death in NYC </h1>
+</body>
+
+<script>
+  console.log(d3); // test if d3 is loaded
+
+  /* Data "format"
+  Cause of Death: "HUMAN IMMUNODEFICIENCY VIRUS DISEASE"
+  Count: "297"
+  Ethnicity: "NON-HISPANIC BLACK"
+  Percent: "5"
+  Sex: "MALE"
+  Year: "2010"
+  */
+
+  d3.csv('ny-causeofdeath.csv', function(err, d) {
+    if(err) console.log(err);
+
+    // replace 'd' with an aggregated dataset
+    d = aggregate(d);
+
+    // build the visualization using the aggregated data
+    buildVis(d);
+  });
+
+  /*
+  * The data is too long to visualize by itself.
+  * We use d3.nest to "collapse" on dimensions.
+  * http://bl.ocks.org/phoebebright/raw/3176159/
+  *
+  * What we're doing is collapsing on Ethnicity,
+  * then summing the number of deaths for each entry (Count)
+  */
+  function aggregate(d){
+
+    var nested_data = d3.nest()
+    .key(function(d) { return d.Ethnicity; })
+    .rollup(function(leaves) { 
+      return d3.sum(leaves, function(d) {
+        return d.Count;
+      });
+    })
+    .entries(d);
+
+    return nested_data;
+  }
+
+
+  // Build an incredibly simple bar chart.
+  // **Note: your vis should be more complex than this! 
+  // **Experiment with labels and visual metaphors beyond bar charts
+  function buildVis(d) {
+    /* Data form at this point:
+    key: "NON-HISPANIC BLACK"
+    values: 187431
+    */
+    //console.log(d);
+
+    var width = 300
+      , height = 300;
+
+    // use d3.max to get the domain for our yscale
+    // (the height of our bars)
+    var yscale = d3.scale.linear()
+      .domain( [0, d3.max(d, function(d) { return d["values"]; })] )
+      .range( [20, height-20] );
+
+    var svg = d3.select('body')
+      .append('svg')
+      .attr('width', width)
+      .attr('height', height);
+
+    svg.selectAll('rect')
+      .data(d)
+      .enter().append('rect')
+      .attr('x', function(d, i) { return width/2 + (i*20 + 5); })
+      .attr('y', function(d) { return yscale(d.values); })
+      .attr('height', function(d) { return height - yscale(d.values); })
+      .attr('width', 20)
+      .attr('fill', 'steelblue')
+      .on('mouseover', function() { d3.select(this).attr('fill', 'yellow'); })
+      .on('mouseout', function() { d3.select(this).attr('fill', 'steelblue'); })
+  }
+
+</script>
