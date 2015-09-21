@@ -1,0 +1,167 @@
+{
+ "Reactions":[
+   [
+   {
+     "name": "Sodium",
+     "symbol": "Na",
+     "number": 11,
+     "electrons": [
+       2,
+       8,
+       1
+     ],
+     "children": [
+     ]
+   },
+   {
+     "name": "Chloride",
+     "symbol": "Cl",
+     "number": 17,
+      "electrons": [
+     2,
+     8,
+     7
+   ],
+     "children": [
+     ]
+   },
+   {
+     "name": "Sodium",
+     "symbol": "(Na+)",
+     "number": 10,
+     "electrons": [
+       2,
+       8,
+       1
+     ],
+     "children": [
+     ]
+   },
+   {
+     "name": "Chloride",
+     "symbol": "(Cl-)",
+     "borrowedElectrons":1,
+     "number": 18,
+     "electrons": [
+       2,
+       8,
+       7
+     ],
+     "children": [
+     ]
+   }
+   ]
+,
+   [
+   {
+     "name": "Potassium",
+     "symbol": "K",
+     "number": 19,
+     "electrons": [
+       2,
+       8,
+       8,
+       1
+     ],
+     "children": [
+     ]
+   },
+   {
+     "name": "Chloride",
+     "symbol": "Cl",
+     "number": 17,
+     "electrons": [
+       2,
+       8,
+       7
+     ],
+     "children": [
+     ]
+   },
+   {
+     "name": "Potassium",
+     "symbol": "(K+)",
+     "number": 18,
+     "electrons": [
+       2,
+       8,
+       8,
+       1
+     ],
+     "children": [
+     ]
+   },
+   {
+     "name": "Chloride",
+     "symbol": "(Cl-)",
+     "borrowedElectrons":1,
+     "electrons": [
+       2,
+       8,
+       7
+     ],
+     "number": 18,
+     "children": [
+     ]
+   }
+
+     ],
+
+   [
+     {
+       "name": "Rubidium",
+       "symbol": "Rb",
+       "number": 37,
+       "electrons": [
+         2,
+         8,
+         18,
+         8,
+         1
+       ],
+       "children": [
+       ]
+     },
+     {
+       "name": "Chloride",
+       "symbol": "Cl",
+       "number": 17,
+       "electrons": [
+         2,
+         8,
+         7
+       ],
+       "children": [
+       ]
+     },
+     {
+       "name": "Rubidium",
+       "symbol": "(Rb+)",
+       "number": 36,
+       "electrons": [
+         2,
+         8,
+         18,
+         8,
+         1
+       ],
+       "children": [
+       ]
+     },
+     {
+       "name": "Chloride",
+       "symbol": "(Cl-)",
+       "borrowedElectrons":1,
+       "electrons": [
+         2,
+         8,
+         7
+       ],
+       "number": 18,
+       "children": [
+       ]
+     }
+
+   ]
+ ]
+}
