@@ -13,13 +13,13 @@ I wanted to make the periodic table interactive and show the electons in action 
 
 I got the periodic table as a json file online. Each element has the following properties,
 
-group
-position
-name
-number
-small
-molar
-electrons
+group,
+position,
+name,
+number,
+small,
+molar,
+electrons,
 children
 
 I have used all the properties available in this json in this visualization. 
