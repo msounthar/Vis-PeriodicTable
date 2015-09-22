@@ -2,6 +2,7 @@
 # Assignment 2 - Freestyle Visualization
 
 ["Periodic Table and Reactions"](http://msounthar.github.io/02-Freestyle/index.html).
+(Best viewed in 1920X1080 Resolution)
 
 # Purpose
 
