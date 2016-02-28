@@ -1,7 +1,7 @@
 # Sounthar Manickavasagam
 # Assignment 2 - Freestyle Visualization
 
-["Periodic Table and Reactions"](http://msounthar.github.io/02-Freestyle/index.html).
+["Periodic Table and Reactions"](http://msounthar.github.io/Vis-PeriodicTable/index.html).
 
 # Purpose
 
